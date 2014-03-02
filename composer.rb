@@ -2014,7 +2014,7 @@ after_everything do
   figaro_cancan = foreman_cancan.gsub('=', ': ')
   ## EMAIL
   inject_into_file 'config/secrets.yml', secrets_d_email, :after => "development:\n" if rails_4_1?
-  inject_into_file 'config/secrets.yml', secrets_p_email, :after => "production:\n" if rails_4_1?
+  #inject_into_file 'config/secrets.yml', secrets_p_email, :after => "production:\n" if rails_4_1?
   append_file '.env', foreman_email if prefer :local_env_file, 'foreman'
   append_file 'config/application.yml', figaro_email if prefer :local_env_file, 'figaro'
   ## DEVISE
